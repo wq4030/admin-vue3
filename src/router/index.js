@@ -1,5 +1,5 @@
 // src/router/index.js
-import { createRouter, createWebHistory } from "vue-router";
+import { createRouter, createWebHashHistory } from "vue-router";
 import MainLayout from "@/layouts/MainLayout.vue";
 import Dashboard from "@/views/Dashboard.vue";
 import UserManagement from "@/views/UserManagement.vue";
@@ -9,10 +9,6 @@ import Analytics from "@/views/Analytics.vue";
 import NotFound from "@/components/notFound/NotFound.vue";
 
 const routes = [
-  {
-    path: '/admin-vue3',
-    redirect: '/dashboard',
-  },
   {
     path: "/",
     redirect: "/dashboard",
@@ -72,7 +68,7 @@ const routes = [
 ];
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHashHistory(),
   routes,
 });
 
