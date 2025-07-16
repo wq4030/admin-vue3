@@ -52,7 +52,7 @@ export default defineConfig({
         {
           name: "countup.js",
           var: "CountUp",
-          path: "https://unpkg.com/countup.js@2.9.0/dist/countUp.umd.js"
+          path: "https://unpkg.com/countup.js@2.0.8/dist/countUp.min.js",
         }
       ],
     }),
