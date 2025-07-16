@@ -2,31 +2,35 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches:
-      - master  # 监听 master 分支推送
+    branches: [master] # 触发分支（根据你的主分支名修改）
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write # 允许写入
+      pages: write    # 启用 Pages 写入
+      id-token: write # OIDC 权限
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: 20
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install
 
       - name: Build project
         run: npm run build
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-          force_orphan: true   # ✅ 避免 gh-pages 分支历史冲突
+          path: dist # Vite 默认输出目录
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
