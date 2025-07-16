@@ -40,9 +40,19 @@ export default defineConfig({
           path: "https://unpkg.com/pinia@3.0.3/dist/pinia.iife.prod.js",
         },
         {
-          name: "element-plus-icons-vue",
+          name: "@element-plus/icons-vue",
           var: "ElementPlusIconsVue",
           path: "https://unpkg.com/@element-plus/icons-vue@2.3.1/dist/index.iife.min.js",
+        },
+        {
+          name: "element-plus",
+          var: "ElementPlus",
+          path: "https://unpkg.com/element-plus@2.10.4/dist/index.full.min.js"
+        },
+        {
+          name: "countup.js",
+          var: "CountUp",
+          path: "https://unpkg.com/countup.js@2.9.0/dist/countUp.umd.js"
         }
       ],
     }),
