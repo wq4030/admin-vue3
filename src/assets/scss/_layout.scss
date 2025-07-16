@@ -1,0 +1,49 @@
+// src/assets/scss/_layout.scss
+@use 'variables' as *;
+
+#app {
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-container {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.app-aside {
+  background-color: $sidebar-bg;
+  transition: width $transition;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.app-main {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  background-color: $main-bg;
+}
+
+@media (max-width: 768px) {
+  .app-aside {
+    position: absolute;
+    z-index: 100;
+    height: calc(100% - 60px);
+    top: 60px;
+    left: 0;
+  }
+  
+  .collapsed .app-aside {
+    width: 0 !important;
+    overflow: hidden;
+  }
+
+  .main-content {
+    margin-left: 64px !important;
+  }
+}
