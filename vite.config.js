@@ -48,11 +48,6 @@ export default defineConfig({
           name: "element-plus",
           var: "ElementPlus",
           path: "https://unpkg.com/element-plus@2.10.4/dist/index.full.min.js"
-        },
-        {
-          name: "countup.js",
-          var: "CountUp",
-          path: "https://unpkg.com/countup.js@2.0.8/dist/countUp.min.js",
         }
       ],
     }),
