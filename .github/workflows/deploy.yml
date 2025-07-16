@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write # 允许写入
-      pages: write    # 启用 Pages 写入
+      pages: write # 启用 Pages 写入
       id-token: write # OIDC 权限
 
     steps:
