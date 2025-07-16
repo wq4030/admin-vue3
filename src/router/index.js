@@ -10,6 +10,10 @@ import NotFound from "@/components/notFound/NotFound.vue";
 
 const routes = [
   {
+    path: '/admin-vue3',
+    redirect: '/dashboard',
+  },
+  {
     path: "/",
     redirect: "/dashboard",
     component: MainLayout,

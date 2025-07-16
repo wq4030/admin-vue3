@@ -10,6 +10,7 @@ import importToCDN from "vite-plugin-cdn-import";
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: "/admin-vue3/", // GitHub Pages 发布路径
   plugins: [
     vue(),
     // ✅ gzip 压缩：生成 .gz 文件，服务器开启 gzip 可直接用
@@ -26,23 +27,21 @@ export default defineConfig({
         {
           name: "vue",
           var: "Vue",
-          path: "https://unpkg.com/vue@3.4.21/dist/vue.global.prod.js",
+          path: "https://cdnjs.cloudflare.com/ajax/libs/vue/3.5.17/vue.global.prod.min.js",
         },
         {
           name: "vue-router",
           var: "VueRouter",
-          path: "https://unpkg.com/vue-router@4.3.0/dist/vue-router.global.prod.js",
+          path: "https://cdnjs.cloudflare.com/ajax/libs/vue-router/4.5.1/vue-router.global.prod.min.js",
         },
         {
           name: "pinia",
           var: "Pinia",
-          path: "https://unpkg.com/pinia@2.1.7/dist/pinia.iife.prod.js",
+          path: "https://unpkg.com/pinia@3.0.3/dist/pinia.iife.prod.js",
         },
       ],
     }),
   ],
-
-  base: "./", // GitHub Pages 或相对路径部署用 './'
 
   resolve: {
     alias: {
