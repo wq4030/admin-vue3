@@ -27,18 +27,23 @@ export default defineConfig({
         {
           name: "vue",
           var: "Vue",
-          path: "https://cdnjs.cloudflare.com/ajax/libs/vue/3.5.17/vue.global.prod.min.js",
+          path: "https://unpkg.com/vue@3.5.17/dist/vue.global.prod.js",
         },
         {
           name: "vue-router",
           var: "VueRouter",
-          path: "https://cdnjs.cloudflare.com/ajax/libs/vue-router/4.5.1/vue-router.global.prod.min.js",
+          path: "https://unpkg.com/vue-router@4.5.1/dist/vue-router.global.prod.js",
         },
         {
           name: "pinia",
           var: "Pinia",
           path: "https://unpkg.com/pinia@3.0.3/dist/pinia.iife.prod.js",
         },
+        {
+          name: "element-plus-icons-vue",
+          var: "ElementPlusIconsVue",
+          path: "https://unpkg.com/@element-plus/icons-vue@2.3.1/dist/index.iife.min.js",
+        }
       ],
     }),
   ],
